@@ -36,10 +36,11 @@ final class AuthView: UIView
 		return textField
 	}()
 	var OKButton: UIButton = {
-		let button = UIButton()
+		let button = UIButton(type: .system)
 		button.backgroundColor = #colorLiteral(red: 0.3292098939, green: 0.7112923265, blue: 0.1761212647, alpha: 1)
 		button.layer.cornerRadius = 5
 		button.setTitle("OK", for: .normal)
+		button.setTitleColor(.white, for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 28, weight: UIFont.Weight.bold)
 		return button
 	}()

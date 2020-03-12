@@ -14,6 +14,12 @@
 		22208610241A543E004464F0 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220860F241A543E004464F0 /* AuthViewController.swift */; };
 		22208615241A5750004464F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208614241A5750004464F0 /* SceneDelegate.swift */; };
 		2220861A241A5ABF004464F0 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208619241A5ABF004464F0 /* AuthView.swift */; };
+		2220861F241A71FE004464F0 /* LeadersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220861E241A71FE004464F0 /* LeadersViewController.swift */; };
+		22208621241A7631004464F0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208620241A7631004464F0 /* NetworkService.swift */; };
+		22208623241A7732004464F0 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208622241A7732004464F0 /* Urls.swift */; };
+		22208625241A7CEE004464F0 /* DictExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208624241A7CEE004464F0 /* DictExtension.swift */; };
+		22208627241A855F004464F0 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208626241A855E004464F0 /* NetworkErrors.swift */; };
+		2220862C241ACCC2004464F0 /* PostResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220862B241ACCC2004464F0 /* PostResponseData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		2220860F241A543E004464F0 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		22208614241A5750004464F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		22208619241A5ABF004464F0 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		2220861E241A71FE004464F0 /* LeadersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadersViewController.swift; sourceTree = "<group>"; };
+		22208620241A7631004464F0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		22208622241A7732004464F0 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		22208624241A7CEE004464F0 /* DictExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictExtension.swift; sourceTree = "<group>"; };
+		22208626241A855E004464F0 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		2220862B241ACCC2004464F0 /* PostResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponseData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +73,10 @@
 				22208614241A5750004464F0 /* SceneDelegate.swift */,
 				222085FB241A53BC004464F0 /* AppDelegate.swift */,
 				22208617241A5A6D004464F0 /* AuthScreen */,
-				22208618241A5A94004464F0 /* LeaderScreen */,
+				22208618241A5A94004464F0 /* LeadersScreen */,
+				2220862A241A8582004464F0 /* Services */,
+				22208628241A856E004464F0 /* Enums */,
+				22208629241A8576004464F0 /* Extensions */,
 				22208616241A5A20004464F0 /* Supporting Files */,
 			);
 			path = AuthorizationTask;
@@ -91,15 +106,42 @@
 			children = (
 				22208619241A5ABF004464F0 /* AuthView.swift */,
 				2220860F241A543E004464F0 /* AuthViewController.swift */,
+				2220862B241ACCC2004464F0 /* PostResponseData.swift */,
 			);
 			path = AuthScreen;
 			sourceTree = "<group>";
 		};
-		22208618241A5A94004464F0 /* LeaderScreen */ = {
+		22208618241A5A94004464F0 /* LeadersScreen */ = {
 			isa = PBXGroup;
 			children = (
+				2220861E241A71FE004464F0 /* LeadersViewController.swift */,
 			);
-			path = LeaderScreen;
+			path = LeadersScreen;
+			sourceTree = "<group>";
+		};
+		22208628241A856E004464F0 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				22208622241A7732004464F0 /* Urls.swift */,
+				22208626241A855E004464F0 /* NetworkErrors.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		22208629241A8576004464F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				22208624241A7CEE004464F0 /* DictExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2220862A241A8582004464F0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				22208620241A7631004464F0 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,9 +238,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				222085FC241A53BC004464F0 /* AppDelegate.swift in Sources */,
+				2220861F241A71FE004464F0 /* LeadersViewController.swift in Sources */,
+				22208623241A7732004464F0 /* Urls.swift in Sources */,
 				22208610241A543E004464F0 /* AuthViewController.swift in Sources */,
+				2220862C241ACCC2004464F0 /* PostResponseData.swift in Sources */,
 				2220861A241A5ABF004464F0 /* AuthView.swift in Sources */,
+				22208621241A7631004464F0 /* NetworkService.swift in Sources */,
 				22208615241A5750004464F0 /* SceneDelegate.swift in Sources */,
+				22208625241A7CEE004464F0 /* DictExtension.swift in Sources */,
+				22208627241A855F004464F0 /* NetworkErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

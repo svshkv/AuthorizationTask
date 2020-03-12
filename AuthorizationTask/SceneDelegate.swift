@@ -18,7 +18,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate
 			   options connectionOptions: UIScene.ConnectionOptions) {
 		if let windowScene = scene as? UIWindowScene {
 			let window = UIWindow(windowScene: windowScene)
-			window.rootViewController = AuthViewController()
+			window.rootViewController = AuthViewController(networkService: NetworkService())
 			self.window = window
 			window.makeKeyAndVisible()
 		}
