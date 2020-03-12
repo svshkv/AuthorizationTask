@@ -10,6 +10,16 @@ import UIKit
 
 final class AuthViewController: UIViewController
 {
+	private var OKButton = UIButton()
+	private var loginTextField = UITextField()
+	
+	override func loadView() {
+		let authView = AuthView()
+		self.view = authView
+		OKButton = authView.OKButton
+		loginTextField = authView.loginTextField
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}

@@ -13,6 +13,7 @@
 		22208608241A53C7004464F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22208606241A53C7004464F0 /* LaunchScreen.storyboard */; };
 		22208610241A543E004464F0 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220860F241A543E004464F0 /* AuthViewController.swift */; };
 		22208615241A5750004464F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208614241A5750004464F0 /* SceneDelegate.swift */; };
+		2220861A241A5ABF004464F0 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208619241A5ABF004464F0 /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		22208609241A53C7004464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2220860F241A543E004464F0 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		22208614241A5750004464F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		22208619241A5ABF004464F0 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				22208614241A5750004464F0 /* SceneDelegate.swift */,
 				222085FB241A53BC004464F0 /* AppDelegate.swift */,
-				2220860F241A543E004464F0 /* AuthViewController.swift */,
+				22208617241A5A6D004464F0 /* AuthScreen */,
+				22208618241A5A94004464F0 /* LeaderScreen */,
 				22208616241A5A20004464F0 /* Supporting Files */,
 			);
 			path = AuthorizationTask;
@@ -81,6 +84,22 @@
 				22208603241A53C7004464F0 /* Preview Content */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22208617241A5A6D004464F0 /* AuthScreen */ = {
+			isa = PBXGroup;
+			children = (
+				22208619241A5ABF004464F0 /* AuthView.swift */,
+				2220860F241A543E004464F0 /* AuthViewController.swift */,
+			);
+			path = AuthScreen;
+			sourceTree = "<group>";
+		};
+		22208618241A5A94004464F0 /* LeaderScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LeaderScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +197,7 @@
 			files = (
 				222085FC241A53BC004464F0 /* AppDelegate.swift in Sources */,
 				22208610241A543E004464F0 /* AuthViewController.swift in Sources */,
+				2220861A241A5ABF004464F0 /* AuthView.swift in Sources */,
 				22208615241A5750004464F0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,9 +335,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"AuthorizationTask/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AuthorizationTask/Supporting Files/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AuthorizationTask/Info.plist;
+				INFOPLIST_FILE = "AuthorizationTask/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,9 +354,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"AuthorizationTask/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"AuthorizationTask/Supporting Files/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = AuthorizationTask/Info.plist;
+				INFOPLIST_FILE = "AuthorizationTask/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
