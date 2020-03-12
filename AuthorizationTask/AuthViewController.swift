@@ -8,11 +8,9 @@
 
 import UIKit
 
-class AuthViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+final class AuthViewController: UIViewController
+{
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
 }

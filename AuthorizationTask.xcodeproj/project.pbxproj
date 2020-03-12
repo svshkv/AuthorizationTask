@@ -12,6 +12,7 @@
 		22208605241A53C7004464F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22208604241A53C7004464F0 /* Preview Assets.xcassets */; };
 		22208608241A53C7004464F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22208606241A53C7004464F0 /* LaunchScreen.storyboard */; };
 		22208610241A543E004464F0 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220860F241A543E004464F0 /* AuthViewController.swift */; };
+		22208615241A5750004464F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22208614241A5750004464F0 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		22208607241A53C7004464F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22208609241A53C7004464F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2220860F241A543E004464F0 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		22208614241A5750004464F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,10 @@
 		222085FA241A53BC004464F0 /* AuthorizationTask */ = {
 			isa = PBXGroup;
 			children = (
+				22208614241A5750004464F0 /* SceneDelegate.swift */,
 				222085FB241A53BC004464F0 /* AppDelegate.swift */,
 				2220860F241A543E004464F0 /* AuthViewController.swift */,
-				22208601241A53C7004464F0 /* Assets.xcassets */,
-				22208606241A53C7004464F0 /* LaunchScreen.storyboard */,
-				22208609241A53C7004464F0 /* Info.plist */,
-				22208603241A53C7004464F0 /* Preview Content */,
+				22208616241A5A20004464F0 /* Supporting Files */,
 			);
 			path = AuthorizationTask;
 			sourceTree = "<group>";
@@ -70,6 +70,17 @@
 				22208604241A53C7004464F0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22208616241A5A20004464F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22208601241A53C7004464F0 /* Assets.xcassets */,
+				22208606241A53C7004464F0 /* LaunchScreen.storyboard */,
+				22208609241A53C7004464F0 /* Info.plist */,
+				22208603241A53C7004464F0 /* Preview Content */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +178,7 @@
 			files = (
 				222085FC241A53BC004464F0 /* AppDelegate.swift in Sources */,
 				22208610241A543E004464F0 /* AuthViewController.swift in Sources */,
+				22208615241A5750004464F0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
