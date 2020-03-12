@@ -72,7 +72,7 @@ final class LeadersView: UIView
 			backgroundTableViewView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -84),
 			leadersTableView.leftAnchor.constraint(equalTo: backgroundTableViewView.leftAnchor, constant: 24),
 			leadersTableView.rightAnchor.constraint(equalTo: backgroundTableViewView.rightAnchor, constant: -24),
-			leadersTableView.topAnchor.constraint(equalTo: backgroundTableViewView.topAnchor, constant: 32),
+			leadersTableView.topAnchor.constraint(equalTo: backgroundTableViewView.topAnchor, constant: 20),
 			leadersTableView.bottomAnchor.constraint(equalTo: backgroundTableViewView.bottomAnchor, constant: -8),
 			bottomView.leftAnchor.constraint(equalTo: leftAnchor),
 			bottomView.rightAnchor.constraint(equalTo: rightAnchor),
