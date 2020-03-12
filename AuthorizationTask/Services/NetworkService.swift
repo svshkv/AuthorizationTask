@@ -44,6 +44,7 @@ final class NetworkService
 		request.httpMethod = "POST"
 		//let uid = UIDevice.current.identifierForVendor?.uuidString ?? "uid"
 		let uid = UUID().uuidString
+		//let uid = "A645F4E5-6E26-4A9A-9271-8470532D85A1"
 		print(uid)
 		let parameters: [String: Any] = [
 			"name": name,
@@ -66,7 +67,10 @@ extension NetworkService: INetworkService
 						let postUserResponse = try JSONDecoder().decode(PostResponseData.self, from: data)
 						completion(.success(postUserResponse))
 					}
-					catch {}
+					catch {
+						completion(.failure(NetworkError.dataError))
+						return
+					}
 				case .failure(let error):
 					completion(.failure(error))
 				}

@@ -6,4 +6,23 @@
 //  Copyright © 2020 Саша Руцман. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension LeadersViewController: UITableViewDataSource
+{
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 5
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+		return cell
+	}
+}
+
+extension LeadersViewController: UITableViewDelegate
+{
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 80
+	}
+}
