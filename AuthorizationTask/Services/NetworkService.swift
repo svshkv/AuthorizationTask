@@ -10,10 +10,12 @@ import UIKit
 
 typealias DataResult = Result<Data, NetworkError>
 typealias PostRequestResult = Result<PostResponseData, NetworkError>
+typealias GetLeadersResult = Result<LeaderDataWrapper, NetworkError>
 
 protocol INetworkService
 {
 	func postUserRequest(name: String, _ completion: @escaping (PostRequestResult) -> Void)
+	func getLeadersRequest(token: String, _ completion: @escaping (GetLeadersResult) -> Void)
 }
 
 final class NetworkService
@@ -44,14 +46,21 @@ final class NetworkService
 		request.httpMethod = "POST"
 		//let uid = UIDevice.current.identifierForVendor?.uuidString ?? "uid"
 		let uid = UUID().uuidString
-		//let uid = "A645F4E5-6E26-4A9A-9271-8470532D85A1"
-		print(uid)
 		let parameters: [String: Any] = [
 			"name": name,
 			"uid": uid,
 		]
 		guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return nil }
 		request.httpBody = httpBody
+		return request
+	}
+
+	private func createLeadersRequest(token: String) -> URLRequest? {
+		guard let url = URL(string: Urls.ratingUrl) else { return nil }
+		var request = URLRequest(url: url)
+		request.addValue("application/json", forHTTPHeaderField: "content-type")
+		request.addValue("Bearer \(token)", forHTTPHeaderField: "authorization")
+		request.httpMethod = "GET"
 		return request
 	}
 }
@@ -66,6 +75,26 @@ extension NetworkService: INetworkService
 					do {
 						let postUserResponse = try JSONDecoder().decode(PostResponseData.self, from: data)
 						completion(.success(postUserResponse))
+					}
+					catch {
+						completion(.failure(NetworkError.dataError))
+						return
+					}
+				case .failure(let error):
+					completion(.failure(error))
+				}
+			}
+		}
+	}
+
+	func getLeadersRequest(token: String, _ completion: @escaping (GetLeadersResult) -> Void) {
+		if let request = createLeadersRequest(token: token) {
+			fetchData(request: request) { dataResult in
+				switch dataResult {
+				case .success(let data):
+					do {
+						let leaders = try JSONDecoder().decode(LeaderDataWrapper.self, from: data)
+						completion(.success(leaders))
 					}
 					catch {
 						completion(.failure(NetworkError.dataError))

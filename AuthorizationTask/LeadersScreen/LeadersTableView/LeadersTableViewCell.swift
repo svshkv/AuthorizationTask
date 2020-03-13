@@ -12,22 +12,28 @@ final class LeadersTableViewCell: UITableViewCell
 {
 	let positionLabel: UILabel = {
 		let label = UILabel()
-		label.backgroundColor = .green
+		label.textAlignment = .center
+		label.textColor = #colorLiteral(red: 0.5029085875, green: 0.804207623, blue: 0.2152479589, alpha: 1)
+		label.clipsToBounds = true
+		label.layer.cornerRadius = 35
+		label.backgroundColor = #colorLiteral(red: 0.1137115136, green: 0.1137344018, blue: 0.1137065217, alpha: 1)
+		label.font = UIFont(name: "Helvetica-Bold", size: 48)
 		return label
 	}()
 	let usernameLabel: UILabel = {
 		let label = UILabel()
-		label.backgroundColor = .green
+		label.textColor = .white
+		label.font = UIFont(name: "Helvetica-Bold", size: 22)
 		return label
 	}()
 	let pointsLabel: UILabel = {
 		let label = UILabel()
-		label.backgroundColor = .green
+		label.textColor = .white
+		label.font = UIFont(name: "Helvetica-Bold", size: 26)
 		return label
 	}()
 	let photoView: UIImageView = {
 		let imageView = UIImageView()
-		imageView.backgroundColor = .green
 		return imageView
 	}()
 
@@ -57,8 +63,8 @@ final class LeadersTableViewCell: UITableViewCell
 		photoView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			positionLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 24),
-			positionLabel.widthAnchor.constraint(equalToConstant: 60),
-			positionLabel.heightAnchor.constraint(equalToConstant: 60),
+			positionLabel.widthAnchor.constraint(equalToConstant: 70),
+			positionLabel.heightAnchor.constraint(equalToConstant: 70),
 			positionLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
 			usernameLabel.leftAnchor.constraint(equalTo: positionLabel.rightAnchor, constant: 24),
 			usernameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
@@ -67,8 +73,8 @@ final class LeadersTableViewCell: UITableViewCell
 			photoView.leftAnchor.constraint(equalTo: positionLabel.rightAnchor, constant: 16),
 			photoView.widthAnchor.constraint(equalToConstant: 34),
 			photoView.heightAnchor.constraint(equalToConstant: 34),
-			photoView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-			pointsLabel.leftAnchor.constraint(equalTo: photoView.rightAnchor, constant: 12),
+			photoView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
+			pointsLabel.leftAnchor.constraint(equalTo: photoView.rightAnchor, constant: 6),
 			pointsLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -24),
 			pointsLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 8),
 			pointsLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),

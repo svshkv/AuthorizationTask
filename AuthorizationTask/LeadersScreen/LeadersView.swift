@@ -10,7 +10,7 @@ import UIKit
 
 final class LeadersView: UIView
 {
-	let backgroundTableViewView: UIView = {
+	private let backgroundTableViewView: UIView = {
 		let view = UIView()
 		view.layer.borderWidth = 4
 		view.layer.borderColor = #colorLiteral(red: 0.3197941482, green: 0.6925129294, blue: 0.1704572141, alpha: 1)
@@ -23,7 +23,7 @@ final class LeadersView: UIView
 		tableView.backgroundView = backgroundView
 		return tableView
 	}()
-	let topLabel: UILabel = {
+	private let topLabel: UILabel = {
 		let label = UILabel()
 		label.text = "Top"
 		label.textColor = UIColor.white
@@ -31,10 +31,36 @@ final class LeadersView: UIView
 		label.font = UIFont(name: "Helvetica-Bold", size: 52)
 		return label
 	}()
-	let bottomView: UIView = {
+	private let bottomView: UIView = {
 		let view = UIView()
 		view.backgroundColor = #colorLiteral(red: 0.2235063612, green: 0.2235441506, blue: 0.2234980762, alpha: 1)
 		return view
+	}()
+	private let stubView1: UIView = {
+		let view = UIView()
+		view.backgroundColor = .black
+		view.layer.cornerRadius = 5
+		return view
+	}()
+	private let stubView2: UIView = {
+		let view = UIView()
+		view.backgroundColor = .black
+		view.layer.cornerRadius = 5
+		return view
+	}()
+	private let stubView3: UIView = {
+		let view = UIView()
+		view.backgroundColor = .black
+		view.layer.cornerRadius = 5
+		return view
+	}()
+	private let stackView: UIStackView = {
+		let stackView = UIStackView()
+		stackView.axis = NSLayoutConstraint.Axis.horizontal
+		stackView.distribution = UIStackView.Distribution.fillEqually
+		stackView.alignment = UIStackView.Alignment.fill
+		stackView.spacing = 4
+		return stackView
 	}()
 
 	init() {
@@ -54,6 +80,10 @@ final class LeadersView: UIView
 		addSubview(backgroundTableViewView)
 		backgroundTableViewView.addSubview(leadersTableView)
 		addSubview(bottomView)
+		stackView.addArrangedSubview(stubView1)
+		stackView.addArrangedSubview(stubView2)
+		stackView.addArrangedSubview(stubView3)
+		bottomView.addSubview(stackView)
 	}
 
 	private func makeConstraints() {
@@ -61,6 +91,10 @@ final class LeadersView: UIView
 		leadersTableView.translatesAutoresizingMaskIntoConstraints = false
 		bottomView.translatesAutoresizingMaskIntoConstraints = false
 		backgroundTableViewView.translatesAutoresizingMaskIntoConstraints = false
+		stackView.translatesAutoresizingMaskIntoConstraints = false
+		stubView1.translatesAutoresizingMaskIntoConstraints = false
+		stubView2.translatesAutoresizingMaskIntoConstraints = false
+		stubView3.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
 			topLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 12),
 			topLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -12),
@@ -78,6 +112,10 @@ final class LeadersView: UIView
 			bottomView.rightAnchor.constraint(equalTo: rightAnchor),
 			bottomView.topAnchor.constraint(equalTo: leadersTableView.bottomAnchor, constant: 8),
 			bottomView.bottomAnchor.constraint(equalTo: bottomAnchor),
+			stackView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 4),
+			stackView.leftAnchor.constraint(equalTo: bottomView.leftAnchor),
+			stackView.rightAnchor.constraint(equalTo: bottomView.rightAnchor),
+			stackView.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor),
 		])
 	}
 }

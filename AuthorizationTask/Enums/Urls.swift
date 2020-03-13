@@ -11,4 +11,5 @@ import Foundation
 enum Urls
 {
 	static let baseUrl = "https://handlingso.club/api/1.0/user"
+	static let ratingUrl = "https://handlingso.club/api/1.0/rating"
 }

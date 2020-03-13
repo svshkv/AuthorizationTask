@@ -20,7 +20,16 @@ extension LeadersViewController: UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier,
+													   for: indexPath) as? LeadersTableViewCell else { return UITableViewCell() }
+		if indexPath.section == 0 {
+			cell.positionLabel.layer.borderColor = #colorLiteral(red: 0.5754188895, green: 0.8283958435, blue: 0.2288650274, alpha: 1)
+			cell.positionLabel.layer.borderWidth = 4
+		}
+		cell.usernameLabel.text = leaders?.rows[indexPath.section].User.name
+		cell.pointsLabel.text = "\(String(describing: leaders?.rows[indexPath.section].totalScore ?? 0))"
+		cell.positionLabel.text = String(indexPath.section + 1)
+		cell.photoView.image = #imageLiteral(resourceName: "image")
 		return cell
 	}
 }

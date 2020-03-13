@@ -12,7 +12,6 @@ enum NetworkError: Error
 {
 	case sessionError
 	case dataError
-	case statusCode(Int)
 }
 
 extension NetworkError: LocalizedError
@@ -23,9 +22,6 @@ extension NetworkError: LocalizedError
 			return NSLocalizedString("Check your internet connection", comment: "")
 		case .dataError:
 			return NSLocalizedString("Error loading", comment: "")
-		case .statusCode(let code):
-			let message = NSLocalizedString("Status code: %d", comment: "")
-			return String.localizedStringWithFormat(message, code)
 		}
 	}
 }
